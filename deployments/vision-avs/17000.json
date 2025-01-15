@@ -1,0 +1,13 @@
+{
+    "lastUpdate": {
+        "timestamp": "1736924172",
+        "block_number": "3148754"
+    },
+    "addresses": {
+        "proxyAdmin": "0x1e6ce20878937558d57595ad30eb3d1f44dde405",
+        "ethgasVisionAvsManager": "0x4f35ec5087ef70867ecd8d31805cf0ca4ab38fdc",
+        "visionAvsManagerImpl": "0xe416ccdcf979d2703ee6d5eecc4f217623c1710b",
+        "stakeRegistry": "0x64bf00291dbe18d813a67ee45d9bdccbcbd44ed2",
+        "stakeRegistryImpl": "0x8064a6bb15f27a0e8290109d3e746c1b927c21f1"
+    }
+}

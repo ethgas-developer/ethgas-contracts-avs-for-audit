@@ -1,0 +1,12 @@
+[submodule "lib/eigenlayer-middleware"]
+	path = lib/eigenlayer-middleware
+	url = https://github.com/Layr-Labs/eigenlayer-middleware
+[submodule "lib/forge-std"]
+	path = lib/forge-std
+	url = https://github.com/foundry-rs/forge-std
+[submodule "lib/eigenlayer-middleware.git"]
+	path = lib/eigenlayer-middleware.git
+	url = https://github.com/Layr-Labs/eigenlayer-middleware.git
+[submodule "lib/forge-std.git"]
+	path = lib/forge-std.git
+	url = https://github.com/foundry-rs/forge-std.git
