@@ -33,9 +33,18 @@ contract UpdateQuorum is Script {
         );
         address[] memory operators;
         ECDSAStakeRegistry stakeRegistry = ECDSAStakeRegistry(visionAvsDeployment.stakeRegistry);
-        vm.startBroadcast(owner);
-        stakeRegistry.updateQuorumConfig(quorum, operators);
-        vm.stopBroadcast();
+
+        if (vm.envBool("IS_MULTISIG") == true) {
+            console.log("hex data for multisig tx");
+            console.logBytes(abi.encodeWithSignature(
+                "updateQuorumConfig(((address,uint96)[]),address[])",
+                quorum, operators
+            ));
+        } else {
+            vm.startBroadcast(owner);
+            stakeRegistry.updateQuorumConfig(quorum, operators);
+            vm.stopBroadcast();
+        }
     }
 
 }
