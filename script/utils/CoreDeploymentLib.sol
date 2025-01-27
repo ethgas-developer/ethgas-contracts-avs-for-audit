@@ -98,6 +98,9 @@ library CoreDeploymentLib {
         address strategyMeth;
         address strategyRealt;
         address strategyBeaconEth;
+        address strategySweth;
+        address strategyWbeth;
+        address strategyOeth;
     }
 
     function deployContracts(
@@ -387,6 +390,7 @@ library CoreDeploymentLib {
         // data.eigenPodManager = json.readAddress(".addresses.eigenPodManager");
         data.delegationManager = json.readAddress(".addresses.delegation");
         data.avsDirectory = json.readAddress(".addresses.avsDirectory");
+        data.rewardsCoordinator = json.readAddress(".addresses.rewardsCoordinator");
         data.strategyLseth = json.readAddress(".addresses.strategyLseth");
         data.strategyEthx = json.readAddress(".addresses.strategyEthx");
         data.strategyReth = json.readAddress(".addresses.strategyReth");
@@ -400,6 +404,9 @@ library CoreDeploymentLib {
         data.strategyMeth = json.readAddress(".addresses.strategyMeth");
         data.strategyRealt = json.readAddress(".addresses.strategyRealt");
         data.strategyBeaconEth = json.readAddress(".addresses.strategyBeaconEth");
+        data.strategySweth = json.readAddress(".addresses.strategySweth");
+        data.strategyWbeth = json.readAddress(".addresses.strategyWbeth");
+        data.strategyOeth = json.readAddress(".addresses.strategyOeth");
 
         return data;
     }

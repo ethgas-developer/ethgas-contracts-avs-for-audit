@@ -42,29 +42,53 @@ contract VisionAvsDeployer is Script {
         IStrategy osethStrat = IStrategy(coreDeployment.strategyOseth);
         IStrategy cbethStrat = IStrategy(coreDeployment.strategyCbeth);
         IStrategy ankrethStrat = IStrategy(coreDeployment.strategyAnkreth);
-        IStrategy eoStrat = IStrategy(coreDeployment.strategyEo);
         IStrategy stethStrat = IStrategy(coreDeployment.strategySteth);
-        IStrategy wethStrat = IStrategy(coreDeployment.strategyWeth);
         IStrategy sfrxethStrat = IStrategy(coreDeployment.strategySfrxeth);
         IStrategy methStrat = IStrategy(coreDeployment.strategyMeth);
-        IStrategy realtStrat = IStrategy(coreDeployment.strategyRealt);
         IStrategy beaconEthStrat = IStrategy(coreDeployment.strategyBeaconEth);
+        // only in mainnet
+        IStrategy oethStrat = IStrategy(coreDeployment.strategyOeth);
+        IStrategy swethStrat = IStrategy(coreDeployment.strategySweth);
+        IStrategy wbethStrat = IStrategy(coreDeployment.strategyWbeth);
+        // only in holesky
+        IStrategy eoStrat = IStrategy(coreDeployment.strategyEo);
+        IStrategy wethStrat = IStrategy(coreDeployment.strategyWeth);
+        IStrategy realtStrat = IStrategy(coreDeployment.strategyRealt);
 
-        IStrategy[13] memory sortedStrats = [
-            lsethStrat,
-            ethxStrat,
-            rethStrat,
-            osethStrat,
-            cbethStrat,
-            ankrethStrat,
-            eoStrat,
-            stethStrat,
-            wethStrat,
-            sfrxethStrat,
-            methStrat,
-            realtStrat,
-            beaconEthStrat
-        ];
+        IStrategy[13] memory sortedStrats;
+        if (block.chainid == 17000) {
+            sortedStrats = [
+                lsethStrat,
+                ethxStrat,
+                rethStrat,
+                osethStrat,
+                cbethStrat,
+                ankrethStrat,
+                eoStrat,
+                stethStrat,
+                wethStrat,
+                sfrxethStrat,
+                methStrat,
+                realtStrat,
+                beaconEthStrat
+            ];
+        } else if (block.chainid == 1) {
+            sortedStrats = [
+                swethStrat,
+                ankrethStrat,
+                rethStrat,
+                methStrat,
+                cbethStrat,
+                osethStrat,
+                wbethStrat,
+                sfrxethStrat,
+                stethStrat,
+                ethxStrat,
+                oethStrat,
+                lsethStrat,
+                beaconEthStrat
+            ];
+        }
 
         uint96 stratMultiplier = 10_000 / uint96(sortedStrats.length);
         uint96 lastStratMultiplier = 10_000 - stratMultiplier * (uint96(sortedStrats.length) - 1);

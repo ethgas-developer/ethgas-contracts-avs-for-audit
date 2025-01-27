@@ -15,6 +15,10 @@
         "strategySfrxeth": "0x9281ff96637710Cd9A5CAcce9c6FAD8C9F54631c",
         "strategyMeth": "0xaccc5A86732BE85b5012e8614AF237801636F8e5",
         "strategyRealt": "0xAD76D205564f955A9c18103C4422D1Cd94016899",
-        "strategyBeaconEth": "0xbeaC0eeEeeeeEEeEeEEEEeeEEeEeeeEeeEEBEaC0"
+        "strategyBeaconEth": "0xbeaC0eeEeeeeEEeEeEEEEeeEEeEeeeEeeEEBEaC0",
+        
+        "strategyOeth": "0x0000000000000000000000000000000000000000",
+        "strategySweth": "0x0000000000000000000000000000000000000000",
+        "strategyWbeth": "0x0000000000000000000000000000000000000000"
     }
 }

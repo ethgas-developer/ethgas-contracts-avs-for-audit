@@ -13,10 +13,10 @@ export RANDOM=$RANDOM && forge script script/RegisterOperatorToAvs.s.sol --rpc-u
 
 ## For contract deployment and config update
 ```
-forge script script/VisionAvsDeployer.s.sol --rpc-url https://rpc.flashbots.net --broadcast
+forge script script/VisionAvsDeployer.s.sol --rpc-url https://eth-mainnet.g.alchemy.com/v2/xxx --broadcast --slow --verify
 forge script script/UpdateMetadata.s.sol --rpc-url https://rpc.flashbots.net --broadcast
 forge script script/GetData.s.sol --rpc-url https://rpc.flashbots.net
 export IS_MULTISIG=true && forge script script/UpdateQuorum.s.sol --rpc-url https://rpc.flashbots.net --broadcast
 # Print calldata in hex
-cast calldata "updateAVSMetadataURI(string)" https://raw.githubusercontent.com/ethgas-developer/ethgas-developer.github.io/main/preconf-avs.json
+cast calldata "updateAVSMetadataURI(string)" https://raw.githubusercontent.com/ethgas-developer/ethgas-developer.github.io/main/vision-avs.json
 ```
