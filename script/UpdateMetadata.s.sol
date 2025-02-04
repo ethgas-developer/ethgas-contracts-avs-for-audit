@@ -12,12 +12,12 @@ contract UpdateMetadata is Script {
     VisionAvsDeploymentLib.DeploymentData visionAvsDeployment;
 
     function run() external {
-        address deployer = vm.rememberKey(vm.envUint("PRIVATE_KEY"));
+        address owner = vm.rememberKey(vm.envUint("PRIVATE_KEY"));
         visionAvsDeployment = VisionAvsDeploymentLib.readDeploymentJson("deployments/vision-avs/", block.chainid);
         serviceManager = EthgasVisionAvsManager(visionAvsDeployment.ethgasVisionAvsManager);
 
         console2.log(serviceManager.owner());
-        vm.startBroadcast(deployer);
+        vm.startBroadcast(owner);
         serviceManager.updateAVSMetadataURI(vm.envString("AVS_METADATA_URI"));
         vm.stopBroadcast();
     }

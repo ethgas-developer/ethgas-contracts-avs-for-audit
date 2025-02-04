@@ -26,6 +26,9 @@ contract GetData is Script {
         stakeRegistry = ECDSAStakeRegistry(visionAvsDeployment.stakeRegistry);
         address operator = vm.envAddress("OPERATOR_ADDRESS");
 
+        bool isOperatorRegistered = stakeRegistry.operatorRegistered(operator);
+        console2.log("isOperatorRegistered: ", isOperatorRegistered);
+        console2.log("EthgasVisionAvsManager restaked strategies for ", operator);
         address[] memory operatorRestakedStrategies = serviceManager.getOperatorRestakedStrategies(operator);
         for (uint i; i < operatorRestakedStrategies.length; i++) {
             console2.log(operatorRestakedStrategies[i]);
