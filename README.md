@@ -8,7 +8,11 @@
 
 ## How to opt in to the Vision AVS 
 ```
+# Any operator can opt in without any whitelisting process
 export RANDOM=$RANDOM && forge script script/RegisterOperatorToAvs.s.sol --rpc-url https://eth-mainnet.g.alchemy.com/v2/xxx --broadcast
+
+# To opt out
+forge script script/DeregisterOperator.s.sol --rpc-url https://eth-mainnet.g.alchemy.com/v2/xxx --broadcast
 ```
 
 ## For contract deployment and config update

@@ -22,21 +22,10 @@ contract RegisterOperatorToAvs is Script {
         visionAvsDeployment = VisionAvsDeploymentLib.readDeploymentJson("deployments/vision-avs/", block.chainid);
         coreDeployment = CoreDeploymentLib.readDeploymentJson("deployments/core/", block.chainid);
 
-        EthgasVisionAvsManager serviceManager = EthgasVisionAvsManager(visionAvsDeployment.ethgasVisionAvsManager);
         ECDSAStakeRegistry stakeRegistry = ECDSAStakeRegistry(visionAvsDeployment.stakeRegistry);
-        IAVSDirectory avsDirectory = IAVSDirectory(coreDeployment.avsDirectory);
-
-        bytes32 salt = bytes32(vm.envUint("RANDOM")); // OS-generated random value
-        uint256 expiry = vm.unixTime() + 3600;
-        bytes32 digestHash = avsDirectory.calculateOperatorAVSRegistrationDigestHash(
-            operator, visionAvsDeployment.ethgasVisionAvsManager, salt, expiry
-        );
-        (uint8 v, bytes32 r, bytes32 s) = vm.sign(operatorPrivateKey, digestHash);
-        bytes memory signature = abi.encodePacked(r, s, v);
-        ISignatureUtils.SignatureWithSaltAndExpiry memory signatureWithSaltAndExpiry = ISignatureUtils.SignatureWithSaltAndExpiry(signature, salt, expiry);
 
         vm.startBroadcast();
-        stakeRegistry.registerOperatorWithSignature(signatureWithSaltAndExpiry, operator);
+        stakeRegistry.deregisterOperator();
         vm.stopBroadcast();
     }
 
