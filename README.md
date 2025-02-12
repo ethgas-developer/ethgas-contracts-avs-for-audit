@@ -5,13 +5,17 @@
 * install foundry
 * run `forge build`
 * clone `.env.example` as `.env` and fill in the values
+    * For AVS optin, `PRIVATE_KEY` is the key controlling the operator
 
 ## How to opt in to the Vision AVS 
+* Any operator can opt in without any whitelisting process
+* There is no infra required
 ```
-# Any operator can opt in without any whitelisting process
 export RANDOM=$RANDOM && forge script script/RegisterOperatorToAvs.s.sol --rpc-url https://eth-mainnet.g.alchemy.com/v2/xxx --broadcast
+```
 
-# To opt out
+## How to opt out from the Vision AVS 
+```
 forge script script/DeregisterOperator.s.sol --rpc-url https://eth-mainnet.g.alchemy.com/v2/xxx --broadcast
 ```
 
