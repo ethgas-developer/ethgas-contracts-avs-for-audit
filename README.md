@@ -5,9 +5,10 @@
 * install foundry
 * run `forge build`
 * clone `.env.example` as `.env` and fill in the values
-    * For AVS optin, `PRIVATE_KEY` is the key controlling the operator
+    * For the AVS opt-in, `PRIVATE_KEY` is the key controlling the operator
 
 ## How to opt in to the Vision AVS 
+* EigenLayer Dashboard: https://app.eigenlayer.xyz/avs/0x6201bc0a699e3b10f324204e6f8ecdd0983de227
 * Any operator can opt in without any whitelisting process
 * There is no infra required
 ```
@@ -28,3 +29,7 @@ export IS_MULTISIG=true && forge script script/UpdateQuorum.s.sol --rpc-url http
 # Print calldata in hex
 cast calldata "updateAVSMetadataURI(string)" https://raw.githubusercontent.com/ethgas-developer/ethgas-developer.github.io/main/vision-avs.json
 ```
+
+## If you need help...
+* [ETHGas Doc](https://docs.ethgas.com/)
+* [ETHGas X / Twitter](https://x.com/ETHGASofficial)
