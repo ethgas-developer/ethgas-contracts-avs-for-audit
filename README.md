@@ -30,6 +30,13 @@ export IS_MULTISIG=true && forge script script/UpdateQuorum.s.sol --rpc-url http
 cast calldata "updateAVSMetadataURI(string)" https://raw.githubusercontent.com/ethgas-developer/ethgas-developer.github.io/main/vision-avs.json
 ```
 
+## How to perform slashing
+```
+forge script script/CreateOperatorSets.s.sol --rpc-url https://eth-mainnet.g.alchemy.com/v2/xxx --broadcast
+export RANDOM=$RANDOM && forge script script/RegisterOperatorToAvsSets.s.sol --rpc-url https://eth-mainnet.g.alchemy.com/v2/xxx --broadcast
+forge script script/Slash.s.sol --rpc-url https://eth-mainnet.g.alchemy.com/v2/xxx --broadcast
+```
+
 ## If you need help...
 * [ETHGas Doc](https://docs.ethgas.com/)
 * [ETHGas X / Twitter](https://x.com/ETHGASofficial)
