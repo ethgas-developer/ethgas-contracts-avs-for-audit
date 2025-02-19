@@ -81,6 +81,7 @@ library CoreDeploymentLib {
         address strategyManager;
         address eigenPodManager;
         address rewardsCoordinator;
+        address allocationManager;
         address eigenPodBeacon;
         address pauserRegistry;
         address strategyFactory;
@@ -391,6 +392,7 @@ library CoreDeploymentLib {
         data.delegationManager = json.readAddress(".addresses.delegation");
         data.avsDirectory = json.readAddress(".addresses.avsDirectory");
         data.rewardsCoordinator = json.readAddress(".addresses.rewardsCoordinator");
+        data.allocationManager = json.readAddress(".addresses.allocationManager");
         data.strategyLseth = json.readAddress(".addresses.strategyLseth");
         data.strategyEthx = json.readAddress(".addresses.strategyEthx");
         data.strategyReth = json.readAddress(".addresses.strategyReth");

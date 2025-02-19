@@ -46,7 +46,7 @@ library VisionAvsDeploymentLib {
             address(new ECDSAStakeRegistry(IDelegationManager(core.delegationManager)));
         address visionAvsManagerImpl = address(
             new EthgasVisionAvsManager(
-                core.avsDirectory, result.stakeRegistry, core.rewardsCoordinator, core.delegationManager
+                core.avsDirectory, result.stakeRegistry, core.rewardsCoordinator, core.delegationManager, core.allocationManager
             )
         );
         // Upgrade contracts

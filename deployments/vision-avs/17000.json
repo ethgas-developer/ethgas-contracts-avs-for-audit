@@ -1,13 +1,13 @@
 {
     "lastUpdate": {
-        "timestamp": "1736924172",
-        "block_number": "3148754"
+        "timestamp": "1739949684",
+        "block_number": "3382792"
     },
     "addresses": {
-        "proxyAdmin": "0x1e6ce20878937558d57595ad30eb3d1f44dde405",
-        "ethgasVisionAvsManager": "0x4f35ec5087ef70867ecd8d31805cf0ca4ab38fdc",
-        "visionAvsManagerImpl": "0xe416ccdcf979d2703ee6d5eecc4f217623c1710b",
-        "stakeRegistry": "0x64bf00291dbe18d813a67ee45d9bdccbcbd44ed2",
-        "stakeRegistryImpl": "0x8064a6bb15f27a0e8290109d3e746c1b927c21f1"
+        "proxyAdmin": "0x43a497fbbfae952b5944cbf4926017392b841946",
+        "ethgasVisionAvsManager": "0xc36c3a68af89b195688e97d63df3e2381273bf9e",
+        "visionAvsManagerImpl": "0x2819a0db2597fe071942eda39aa3f8fbcad2dbe2",
+        "stakeRegistry": "0x5109e852b88313e0147ddae4d6faad92b4afac08",
+        "stakeRegistryImpl": "0x621614a32be1f25363405967a0e9f9ce8196c0b4"
     }
 }
