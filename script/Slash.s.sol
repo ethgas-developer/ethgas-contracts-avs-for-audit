@@ -31,7 +31,7 @@ contract Slash is Script {
         wadsToSlash[0] = 2 * 1e16; // 2%
         wadsToSlash[1] = 1 * 1e16; // 1%
 
-        // actuall slashing amount = stakedAmount * operatorMagnitude / 1e18 * wadsToSlash
+        // actuall slashing amount = stakedAmount * operatorMagnitude / 1e18 * wadsToSlash / 1e18
         vm.startBroadcast(owner);
         serviceManager.slash(
             operator,
